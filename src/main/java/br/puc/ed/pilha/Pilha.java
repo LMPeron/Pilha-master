@@ -1,14 +1,16 @@
 package br.puc.ed.pilha;
 
-public interface Pilha {
+public interface Pilha<T> {
 
-    void push(Character e);
+    void push(T t);
 
-    Character pop();
+    T pop();
 
-    Character top();
+    T top();
 
     Integer size();
 
     Boolean isEmpty();
+
+    void print();
 }
