@@ -10,10 +10,12 @@ Problemas Estruturados em Computação do curso de Engenharia de Software da PUC
 **Exercícios:**
 
 1) Implemente a PilhaArray baseado nos projetos de arrays implementados anteriormente.
+
 2) Implemente a PilhaListaEncadeada baseada nos projetos de lista encadeada implementados
    anteriormente.
 3) AFI3: Crie o método reverse na classe StringUtils, que recebe uma String como parâmetro e retorna
    a representação reversa dessa String, conforme demonstração nos slides 8-15.
+   
 4) AFI3: Iniciando com uma pilha vazia, se você executar 25 operações push, 12 operações top e 10
    operações pop, qual o tamanho final da lista?  
    Resposta:
@@ -21,7 +23,7 @@ Problemas Estruturados em Computação do curso de Engenharia de Software da PUC
    push(5), push(3), pop(), push(2), push(8), pop(), pop(), push(9), push(1), pop(), push(7), push(
    6), pop(), pop(), push(4), pop(), pop()  
    Qual será o conteúdo da pilha ao final dessas operações?  
-   Resposta:
+   Resposta: 5
 6) EXTRA: Implementar algoritmo do slide 17 para validar a combinação de abre/fecha parênteses,
    colchetes e chaves de uma expressão.
 

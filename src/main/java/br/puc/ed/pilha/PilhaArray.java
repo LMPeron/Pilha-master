@@ -4,54 +4,48 @@ public class PilhaArray<T> implements Pilha<T> {
 
     private int capacidade;
     private Object[] pilha;
+    private int tamanho;
 
     public PilhaArray(int capacidade) {
         this.capacidade = capacidade;
         this.pilha = new Object[capacidade];
+        this.tamanho = 0;
     }
 
-    @Override
     public void push(T t) {
         if (this.isEmpty()) {
             this.pilha[0] = t;
+            this.tamanho++;
             return;
         }
-        if (!this.size().equals(this.capacidade))
-            this.pilha[this.size() + 1] = t;
+        if (!this.size().equals(this.capacidade)) {
+            this.pilha[this.tamanho] = t;
+            this.tamanho++;
+        }
+            
     }
 
-    @Override
     public T pop() {
         if (this.size() > 0) {
-            Object popped = pilha[this.size()];
-            this.pilha[this.size()] = null;
+            Object popped = pilha[this.tamanho - 1];
+            this.pilha[this.tamanho - 1] = null;
+            this.tamanho--;
             return (T)popped;
         }
         return null;
     }
 
-    @Override
     public T top() {
-        if (this.size() > 0) return (T)this.pilha[this.size()];
+        if (this.size() > 0) return (T)this.pilha[this.tamanho];
         return null;
     }
 
-    @Override
     public Integer size() {
-        Integer count = 0;
-        for (Object obj : pilha) {
-            if (obj != null) count++;
-        }
-        return count; 
+        return this.tamanho;
     }
 
-    @Override
     public Boolean isEmpty() {
-        Integer count = 0;
-        for (Object obj : pilha) {
-            if (obj != null) count++;
-        }
-        return (count == 0);
+        return (this.tamanho == 0);
     }
 
     public void print() {
